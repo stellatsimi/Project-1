@@ -1,0 +1,30 @@
+public class Main{
+    public static void main(String args[]) throws ExistingBeneficiary, ExistingDonator, ExistingAdmin, RemovedBeneficiary, RemovedDonator, RemovedAdmin, ExistedEntity, NotAvailableQuantity {
+    Organization or=new Organization();
+    Material milk=new Material("milk","evapore",1086,1);
+    Material sugar=new Material("sugar","brown",2030,2);
+    Material rice=new Material("rice","basmati",3049,3);
+    Service MedicalSupport=new Service("MedicalSupport","nurse",5621);
+    Service NurserySupport=new Service("NurserySupport","hospital",1739);
+    Service BabySitting=new Service("BabySitting","help",7920);
+    Admin admin=new Admin("Maria","6987654321",true);
+    or.addAdmin(admin);
+    Donator d1=new Donator("Stella","6906877233");
+    or.insertDonator(d1);
+    Beneficiary b1=new Beneficiary("Xristina","6930184891",2);
+    Beneficiary b2=new Beneficiary("Stamatis","6920456810",7);
+    or.insertBeneficiary(b1);
+    or.insertBeneficiary(b2);
+    Menu m=new Menu();
+    or.getAdminList(m.getNewAdminList());
+    m.Menu(or);
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+} 
