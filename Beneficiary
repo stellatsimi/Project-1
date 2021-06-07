@@ -59,4 +59,5 @@ public class Beneficiary extends User{
         throw new NullPointerException("Null list");
         } catch(NullPointerException e) {System.out.println(e.getMessage());}
     }
+
 }
