@@ -1,0 +1,6 @@
+public class RemovedAdmin extends Exceptions{
+    private String msg;
+    public RemovedAdmin(String msg){
+        this.msg = msg;
+    }
+}
