@@ -1,0 +1,8 @@
+public class ExistedEntity extends Exceptions{
+    public ExistedEntity(){
+        super("This entity already exists");
+    }
+    public ExistedEntity(int id){
+        super("There is an entity with the same id" + id);
+    }
+}
