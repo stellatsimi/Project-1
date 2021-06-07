@@ -1,0 +1,6 @@
+public class RemovedDonator extends Exceptions{
+    private String msg;
+    public RemovedDonator(String msg){
+        this.msg = msg;
+    }
+}
