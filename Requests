@@ -1,0 +1,55 @@
+public class Requests extends RequestDonationList {
+    private Beneficiary beneficiary;
+    private Entity entity;
+    private int posothta;
+    
+    public Requests(Entity entity, int posothta){
+        entity=this.entity;
+        posothta=this.posothta;
+    }
+    
+    public void setPosothtaRE(int a) {this.posothta=a;}
+    public int getPosothtaRE() {return this.posothta;}
+    
+    public void add(RequestDonation requestdonation, int a) {
+        if (requestdonation.quantity>=a && 
+        validRequestDonation(requestdonation, a))
+        {super.add(requestdonation);}
+        
+        }
+    
+    public void modify(RequestDonation requestdonation, int a) {
+        if (requestdonation.quantity>=a && 
+        validRequestDonation(requestdonation, a))
+        {super.modify(requestdonation, a);}
+        }
+    
+    public boolean validRequestDonation(RequestDonation requestdonation, int a){
+        if(requestdonation.getDetails()=="Service") {
+        return true; 
+        }
+        
+        else { 
+          
+          double y;
+          y=beneficiary.getLevel();
+          if (a<=y) {return true;}
+          
+          
+          
+        }
+        return false;
+        } 
+        
+    public void commit(RequestDonation requestdonation, int a) throws IllegalArgumentException{
+        try 
+        {requestdonation.setQuantity(requestdonation.quantity-a);
+        beneficiary.addReceivedList(requestdonation); 
+        super.remove(requestdonation);} 
+        catch (Exception ae) {throw new IllegalArgumentException ("Runtime exception");}
+        }
+        public String getDetails(){
+          return  this.entity.getDetails();}
+        public String getNameRE(){
+            return this.entity.getName();}
+        }
