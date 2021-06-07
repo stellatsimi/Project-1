@@ -1,0 +1,6 @@
+public class ExistingBeneficiary extends Exceptions{
+    private String msg;
+    public ExistingBeneficiary(String msg){
+        this.msg = msg; 
+    }
+}
