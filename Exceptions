@@ -2,4 +2,5 @@ abstract public class Exceptions extends Throwable{
     private String msg;
     public Exceptions(){}
     public Exceptions(String msg) {super(msg);}
+
 }
