@@ -1,0 +1,62 @@
+import java.util.*;
+
+public class Beneficiary extends User{
+    public int noPersons = 1;
+    private List<RequestDonation> receivedList;
+    private List<Requests> requestsList;
+
+    public Beneficiary(String name, String phone, int noPersons){
+        super(name, phone);
+        this.noPersons = noPersons;
+    }
+   
+    public String getUser() { return "Beneficiary";}
+   
+    public int getNoPersons() {return this.noPersons;}
+   
+    public int getLevel() {
+        int level=1;
+    if(noPersons == 1){
+            level = 1;
+        }
+        else if(noPersons>1 && noPersons<5){
+            level = 2;
+        }
+        else if(noPersons>=5){
+            level = 3;
+        }    
+        return level;
+    }
+   
+    public void addRequest(Requests request) {
+        requestsList.add(request);  
+    }
+   
+    public void removeRequest(Requests request) {
+        requestsList.remove(request);  
+    }
+   
+   
+   
+    public void addReceivedList(RequestDonation rd) {receivedList.add(rd);}
+    public void getRequestsList(List list) throws NullPointerException{
+        try{
+        list = this.requestsList;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+   
+   public void deleteReceivedList() {
+    for(RequestDonation rd: receivedList) {
+     receivedList.remove(rd);  
+    }
+    }
+    public void commit(){
+        System.out.println(receivedList);}
+    public void getReceivedList(List list) throws NullPointerException{
+        try{
+        list = this.receivedList;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+}
