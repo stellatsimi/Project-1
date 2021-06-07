@@ -31,4 +31,5 @@ public class Donator extends User{
     }
     public void commit(){
        System.out.println("Your offer has been submitted successfully");}
+
 }    
