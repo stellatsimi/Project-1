@@ -1,0 +1,28 @@
+import java.util.*;
+public class Offers extends RequestDonationList{
+    public List<RequestDonation> commitList;//=getrdEntities();
+    private Entity entity;
+    private int posothta;
+    private RequestDonationList rql;
+    public Offers(Entity entity, int posothta){
+        entity=this.entity;
+        posothta=this.posothta;
+    }
+    public void commit() {
+        ArrayList<RequestDonation> currentdonations= new ArrayList<RequestDonation>();
+        rql.getrdEntitiesList(commitList);
+        for (RequestDonation rd : commitList) {
+        currentdonations.add(rd);
+        rdEntities.remove(rd);
+        }     
+}
+
+ public String getNameOf() {
+     return this.entity.getName();
+     
+}
+
+public void setPosothta(int a) {this.posothta=a;}
+public int getPosothta() {return this.posothta;}
+}
+© 2021 GitHub, Inc.
