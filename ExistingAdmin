@@ -1,0 +1,6 @@
+public class ExistingAdmin extends Exceptions{
+    private String msg;
+    public ExistingAdmin(String msg){
+        this.msg = msg;
+    }
+}
