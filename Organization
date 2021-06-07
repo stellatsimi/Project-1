@@ -1,0 +1,94 @@
+import java.util.*;
+import java.util.ArrayList;
+
+public class Organization{
+    public String name;
+    private Admin admin;
+    private List<Entity> entityList;
+    private List<Donator> donatorList;
+    private List<Beneficiary> beneficiaryList;
+    private List<RequestDonation> currentDonations;
+    private List<Admin> adminlist;
+    public Admin getAdmin(){
+        return admin;
+    }
+    public void setAdmin(Admin admin){
+        this.admin = admin;
+    }
+    public void addEntity(Entity entity){
+        entityList.add(entity);
+    }
+    public void removeEntity(Entity entity){
+        entityList.remove(entity);
+    }
+    
+  
+    public void insertDonator(Donator donator){
+        try{
+        donatorList.add(donator);
+        throw new NullPointerException("This Donator already exists on the catalogue");
+        } catch(NullPointerException k){System.out.println("Message: " + k.getMessage());}
+    }
+    public void removeDonator(Donator donator){
+        donatorList.remove(donator);
+    }
+    public void insertBeneficiary (Beneficiary beneficiary) throws ExistingBeneficiary {
+        try{
+        beneficiaryList.add(beneficiary);
+        throw new NullPointerException("This beneficiary already exists on the catalogue");
+        } catch (NullPointerException ob){
+            //throw new ExistingBeneficiary(ob.getMessage());
+            System.out.println("Message: " + ob.getMessage());
+        }
+    }
+    public void removeBeneficiary(Beneficiary beneficiary){
+        beneficiaryList.remove(beneficiary);
+    }
+    public static void listEntities(List<Entity> entityList){
+
+    } 
+    public static void listBeneficiaries(List<Beneficiary> beneficiaryList){
+
+    }
+    public static void listDonators(List<Donator> donatorList){
+        System.out.println("Donators:\n");
+        for(Donator i : donatorList)
+            System.out.println(i);
+    }
+    public void getCurrentDonationsList(List list) throws NullPointerException{
+        try{
+        list = this.currentDonations;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+    public void getDonatorList(List list) throws NullPointerException{
+        try{
+        list = this.donatorList;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+    public void getBeneficiaryList(List list) throws NullPointerException{
+        try{
+        list = this.beneficiaryList;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+    public void getEntityList(List list) throws NullPointerException{
+        try{
+        list = this.entityList;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+    public void getAdminList(List list) throws NullPointerException{
+        try{
+        list = this.adminlist;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+    public void addAdmin(Admin admin){
+        try{
+        adminlist.add(admin);
+        throw new NullPointerException("");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    } 
+} 
