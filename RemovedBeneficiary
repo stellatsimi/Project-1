@@ -1,0 +1,6 @@
+public class RemovedBeneficiary extends Exceptions{
+    private String msg;
+    public RemovedBeneficiary(String msg){
+        this.msg = msg;
+    }
+}
