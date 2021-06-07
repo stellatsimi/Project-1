@@ -1,0 +1,6 @@
+public class ExistingDonator extends Exceptions{
+    private String msg;
+    public ExistingDonator(String msg){
+        this.msg = msg;
+    }
+}
