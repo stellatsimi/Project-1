@@ -1,0 +1,5 @@
+public class NotAvailableQuantity extends Exceptions{
+    public NotAvailableQuantity(){
+        super("The entity's quantity it's not available in the organization");
+    }
+}
