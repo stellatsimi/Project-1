@@ -24,5 +24,6 @@ public class Offers extends RequestDonationList{
 
 public void setPosothta(int a) {this.posothta=a;}
 public int getPosothta() {return this.posothta;}
+
 }
 
