@@ -1,0 +1,29 @@
+public class Material extends Entity{
+    private Beneficiary beneficiary;
+    public double level;
+    public double level1;
+    public double level2;
+    public double level3;
+
+    public Material(String name,String description, int id, double level){
+        super(name, description, id);
+       // if(beneficiary.getNoPersons() == 1){
+            //level = level1;
+        //}
+       // else if(beneficiary.getNoPersons()>1 && beneficiary.getNoPersons()<5){
+            //level = level2;
+       // }
+       // else if(beneficiary.getNoPersons()==5){
+            //level = level3;
+       // }
+        this.level = level;
+    }
+
+    public String getDetails(){
+        return "This is a " + level + " Material";
+    }
+    
+    public double getLevel() {
+        return this.level;}
+}
+   
