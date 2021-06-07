@@ -32,7 +32,8 @@ public boolean checkID(RequestDonation rd) {
     int flag=0;
     for (RequestDonation k:rdEntities){
         if (rd.getID()==k.getID()) {flag=1;}
-    }
+   
+   }
     if (flag==0) return true;
     else return false;
 }
