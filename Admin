@@ -6,4 +6,5 @@ public Admin(String name,String phone,boolean isAdmin)
 
  public String getUser() { return "Admin";}
  
+
 }
