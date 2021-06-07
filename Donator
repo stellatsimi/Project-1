@@ -1,0 +1,34 @@
+import java.util.List;
+
+public class Donator extends User{
+    private List<Offers> offersList;
+    
+    public Donator(String name, String phone) {
+    super(name, phone);
+    }
+    
+    public String getUser() { return "Donator";}
+
+    public void addOffer(Offers offer) {
+        offersList.add(offer);
+    }
+    
+    public void removeOffer(Offers offer) {
+        offersList.remove(offer);
+        
+    }
+    
+    public void showOffers() {
+        for(Offers i: offersList) {
+         System.out.println(i);   
+        }
+    }
+    public void getOffersList(List list) throws NullPointerException{
+        try{
+        list = this.offersList;
+        throw new NullPointerException("Null list");
+        } catch(NullPointerException e) {System.out.println(e.getMessage());}
+    }
+    public void commit(){
+       System.out.println("Your offer has been submitted successfully");}
+}    
