@@ -1,0 +1,46 @@
+import java.util.*;
+import java.util.*;
+
+public class RequestDonationList {
+private static List<RequestDonation> rdEntities;
+public String get(RequestDonation r){
+return rdEntities+" "+r.getID();} 
+public void add(RequestDonation p){
+
+for (RequestDonation k:rdEntities) {
+if(p.getID()==k.getID()){ k.setQuantity(k.getQuantity()+p.getQuantity());  }}
+
+if (checkID(p)==true){ rdEntities.add(p);}
+//else if(checkID(p)==false) {throw Exception;}
+}
+
+public void remove(RequestDonation N){
+rdEntities.remove(N);
+}
+public void modify(RequestDonation p,double number ){
+p.setQuantity(number);
+}
+public void monitor(){
+for(RequestDonation l:rdEntities){
+System.out.println("The name is :"+l +", the quantity is :"+l.getQuantity());}
+}
+public void reset(){
+rdEntities.clear();
+}
+
+public boolean checkID(RequestDonation rd) {
+    int flag=0;
+    for (RequestDonation k:rdEntities){
+        if (rd.getID()==k.getID()) {flag=1;}
+    }
+    if (flag==0) return true;
+    else return false;
+}
+
+public void getrdEntitiesList(List list) throws NullPointerException{
+    try{
+    list = this.rdEntities;
+    throw new NullPointerException("Null list");
+    } catch(NullPointerException e) {System.out.println(e.getMessage());}
+}
+}
